@@ -11,7 +11,12 @@ public class GreetingController {
 	@GetMapping("/greeting")
 	public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
 		model.addAttribute("name", name);
-		return "greeting";
+		return "hello world";
+	}
+	
+	@GetMapping("/power")
+	public int power(@RequestParam(name = "num", required = false, defaultValue = "World") int num, Model model) {
+		return num * num;
 	}
 
 }
